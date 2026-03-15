@@ -3,7 +3,7 @@ services:
     name: mme-suite-app
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+    startCommand: streamlit run app.py
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10.0
+        value: 3.10.0 # バージョンを確実に指定
