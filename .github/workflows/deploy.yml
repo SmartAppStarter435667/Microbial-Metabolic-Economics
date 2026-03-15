@@ -1,7 +1,7 @@
 name: Deploy Introduction Site
 on:
   push:
-    branches: ["main"] # mainブランチにpushした時に発火
+    branches: ["main"]
 permissions:
   contents: read
   pages: write
@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # v3からv4へ更新
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4 # 最新版へ
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3 # v1(内部でv3を使用)からv3へ更新
         with:
-          path: '.' # リポジトリ直下のファイルをアップロード
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4 # v1からv4へ更新
